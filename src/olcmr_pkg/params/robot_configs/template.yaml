@@ -1,0 +1,52 @@
+## General parameters
+robot_name: "templatebot3000"
+use_ekf_prior: True
+use_slam_loop_closure: True
+compute_camera_lidar_projection: True
+number_of_cameras: 3
+visualise: True
+save_trajectories: False      # save the trajectories as csv files to compare with ground truth
+downsample_points_cloud : True    # downsapling using pcl filter grid
+vg_size_for_slam: 0.2             # downsapling voxel size for slam
+vg_size_for_tsdf: 0.2             # downsapling voxel size for tsdf integration
+
+## Parameters and calibration files
+ekf_param_file: 'ekf_odom_imu_lidarslam.yaml'
+lidarslam_param_file: 'lidarslam_params.yaml'
+cameras_calibration_file: 'camchain.yaml'
+rviz_config_file: 'olcmr_config.rviz'
+
+## Data bag
+use_bag: True
+use_ros1_bag: False
+bag_file: 'rosbag/bag'
+
+## ROS2 Topics
+lidar_point_cloud_topic: '/lidar/points'
+imu_topic: '/IMU'
+kinematic_odom_topic: '/odom'
+camera1_namespace: '/cam1'
+camera2_namespace: '/cam2'
+camera3_namespace: '/cam3'
+
+## Frames
+map_frame: "map"
+lidar_frame: "lidar"
+camera1_frame: "cam1"
+camera2_frame: "cam2"
+camera3_frame: "cam3"
+slam_frame: "slam_base_link"
+ekf_frame: "ekf_base_link"
+
+## Tf
+publish_static_tf: True
+lidar_tf: ['0','0','0','0','0','0']
+lidar_camera_tf: ['0','0','0','0','0','0']
+#Tf between lidar and first camera 
+#(if using kalibr for extrinsic cameras calibration and estimated that tf, otherwise use tfs between cameras and robot base)
+
+use_manually_defined_cameras_tf: False
+camera1_tf: ['0', '0', '0', '0', '0', '0']
+camera2_tf: ['0', '0', '0', '0', '0', '0']
+camera3_tf: ['0', '0', '0', '0', '0', '0']
+

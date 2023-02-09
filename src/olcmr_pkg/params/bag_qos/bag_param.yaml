@@ -1,0 +1,13 @@
+# reliability_override.yaml
+/tf:
+  reliability: reliable
+  durability: volatile
+  history: keep_all
+/tf_static:
+  reliability: reliable
+  durability: transient_local
+  history: keep_all
+/agilex_01/lidar/points:
+  reliability: reliable
+  durability: transient_local
+  history: keep_all

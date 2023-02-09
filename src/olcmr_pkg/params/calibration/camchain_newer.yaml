@@ -1,0 +1,56 @@
+cam0:
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs:
+  - -0.04217
+  - -0.00413
+  - 0.00179
+  - -0.00063
+  distortion_model: equidistant
+  intrinsics:
+  - 352.779
+  - 354.609
+  - 359.035
+  - 260.546
+  resolution:
+  - 720
+  - 540
+  rostopic: /alphasense_driver_ros/cam0
+cam1:
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs:
+  - -0.03932015398330179
+  - -0.004740697084133104
+  - 0.0015352229232181549
+  - -0.0004047224742092007
+  distortion_model: equidistant
+  intrinsics:
+  - 353.4771977455599
+  - 352.49309892170646
+  - 359.3820102818009
+  - 246.0762257814033
+  resolution:
+  - 720
+  - 540
+  rostopic: /alphasense_driver_ros/cam3
+cam2:
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs:
+  - -0.03691139827164534
+  - -0.008792737141233907
+  - 0.005972994670065676
+  - -0.0019218526270038702
+  distortion_model: equidistant
+  intrinsics:
+  - 351.3873118634877
+  - 350.7642336259401
+  - 342.7571148078969
+  - 287.284844843618
+  resolution:
+  - 720
+  - 540
+  rostopic: /alphasense_driver_ros/cam4
+
+  

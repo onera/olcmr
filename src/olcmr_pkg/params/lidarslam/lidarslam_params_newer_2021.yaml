@@ -1,0 +1,43 @@
+scan_matcher:
+  ros__parameters:
+    global_frame_id: "map"
+    robot_frame_id: "slam_base_link"
+    odom_frame_id : "ekf_frame"
+    registration_method: "NDT"
+    ndt_resolution: 1.5
+    ndt_num_threads: 4
+    trans_for_mapupdate: 0.5
+    use_min_max_filter: true
+    scan_min_range: 1.0
+    scan_max_range: 50.0
+    scan_period: 0.1
+    map_publish_period: 5.0
+    num_targeted_cloud: 20
+    set_initial_pose: true
+    initial_pose_x: 0.0
+    initial_pose_y: 0.0
+    initial_pose_z: 0.0
+    initial_pose_qx: 0.0
+    initial_pose_qy: 0.0
+    initial_pose_qz: 0.0
+    initial_pose_qw: 1.0
+    use_imu: false
+    use_odom: true
+    debug_flag: false
+    scan_rejection: true
+    rejection_threshold: 200.0
+
+graph_based_slam:
+    ros__parameters:
+      registration_method: "NDT"
+      ndt_resolution: 1.0
+      ndt_num_threads: 1
+      voxel_leaf_size: 0.1
+      loop_detection_period: 7500
+      threshold_loop_closure_score: 15.0
+      distance_loop_closure: 50.0
+      range_of_searching_loop_closure: 50.0
+      search_submap_num: 10
+      num_adjacent_pose_cnstraints: 10
+      use_save_map_in_loop: false
+

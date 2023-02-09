@@ -1,0 +1,4 @@
+build/
+install/
+log/
+pose_graph.g2o

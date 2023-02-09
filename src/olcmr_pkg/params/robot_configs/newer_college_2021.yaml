@@ -1,0 +1,52 @@
+## General parameters
+robot_name: "newer_dataset"
+use_ekf_prior: True
+use_slam_loop_closure: False
+compute_camera_lidar_projection: True
+number_of_cameras: 3
+visualise: False
+save_trajectories: False          # save the trajectories as csv files to compare with ground truth
+downsample_points_cloud : True    # downsapling using pcl filter grid
+vg_size_for_slam: 0.5             # downsapling voxel size for slam
+vg_size_for_tsdf: 0.4             # downsapling voxel size for tsdf integration
+
+## Parameters and calibration files
+ekf_param_file: 'ekf_imu_lidarslam_newer.yaml'
+lidarslam_param_file: 'lidarslam_params_newer_2021.yaml'
+cameras_calibration_file: 'camchain_newer.yaml'
+rviz_config_file: 'olcmr_config.rviz'
+
+## Data bag
+use_bag: True
+use_ros1_bag: True
+bag_file: "/data/rosbag/newer_college_dataset/2021-07-01-10-37-38-quad-easy.bag"
+
+## ROS2 Topics
+lidar_point_cloud_topic: '/os_cloud_node/points'
+imu_topic: '/os_cloud_node/imu'
+kinematic_odom_topic: '/odom'
+camera1_namespace: '/alphasense_driver_ros/cam0'
+camera2_namespace: '/alphasense_driver_ros/cam3'
+camera3_namespace: '/alphasense_driver_ros/cam4'
+
+## Frames
+map_frame: "map"
+lidar_frame: "os_sensor"
+camera1_frame: "cam1"
+camera2_frame: "cam2"
+camera3_frame: "cam3"
+slam_frame: "slam_base_link"
+ekf_frame: "ekf_frame"
+
+## Tf
+publish_static_tf: True
+lidar_tf: ['0.014', '-0.012', '-0.015', '0.018', '0', '0']
+imu_camera_tf: ['-0.04746142', '0.00916453', '-0.04904955', '-1.5702677','-0.0065188','-1.5668573']
+#Tf between lidar and first camera 
+#(if using kalibr for extrinsic cameras calibration and estimated that tf, otherwise use tfs between cameras and robot base)
+
+use_manually_defined_cameras_tf: True
+camera1_tf: ['-0.04746142', '0.00916453', '-0.04904955', '-1.5702677','-0.0065188','-1.5668573']
+camera2_tf: ['-0.00894342', '0.00921261', '-0.0583279', '-3.1372737', '0.00572', '-1.5625525' ]
+camera3_tf: ['0.00642473', '0.01100503', '-0.07169764', '0.0073272','-0.0049265','-1.5728354' ]
+
