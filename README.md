@@ -133,7 +133,7 @@ ros2 service call /data_saver/save_trajectories
 
 # Results and evaluation
 
-***Below videos show the real-time application of OLCMR on the Newer College dataset (left) and on our custom countryside dataset (right)*** 
+***Below videos show the real-time application of OLCMR on the Newer College dataset and on our custom countryside dataset*** 
 
 <p align="center">
   <img align="middle" src="media/newer_college.gif"  width="500">
