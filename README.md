@@ -33,9 +33,12 @@ Online TSDF surface reconstruction is performed under ROS1 Noetic using the [Vox
 The architecture has been evaluated on the Quad-Easy trajectory of the [2021 Newer College dataset](https://ori-drs.github.io/newer-college-dataset/multi-cam/).
 The rosbag used for testing the architecture can be downloaded on the [Newer College dataset website](https://ori-drs.github.io/newer-college-dataset/download/)
 
-<img align="center" src="media/OLCMR_Architecture_Overview.jpg"  width="650">\
-***Figure : OLCMR architecture main components and data transport***
-
+<p align="center">
+  <img src="media/OLCMR_Architecture_Overview.jpg"  width="650">
+</p>
+<p align="center">
+  OLCMR architecture main components and data transport
+</p>
 ---
 
 **Requirements :**
@@ -132,8 +135,10 @@ ros2 service call /data_saver/save_trajectories
 
 ***Below videos show the real-time application of OLCMR on the Newer College dataset (left) and on our custom countryside dataset (right)*** 
 
-<img align="center" src="media/newer_college.gif"  width="339">
-<img align="center" src="media/agilex.gif"  width="339">
+<p align="center">
+  <img align="middle" src="media/newer_college.gif"  width="500">
+  <img align="middle" src="media/agilex.gif"  width="500">
+</p>
 
 SLAM estimated trajectories and CPU/RAM usage monitoring data can be found in the [results](results) folder. See this folder's README file for data plotting manual.
 
