@@ -2,25 +2,6 @@
   
 This repository contains a hybrid ROS2/ROS1 architecture for LiDAR based SLAM and real-time 3D colored mesh reconstruction using TSDF for ground exploration robots. 
 
-# Publication
-
-If you are using this code, please cite: 
-
-- Q. Serdel, C. Grand, J. Marzat and J. Moras, [**Online Localisation and Colored Mesh Reconstruction Architecture for 3D Visual Feedback in Robotic Exploration Missions**](https://arxiv.org/abs/2207.10489). 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
-
- ```bibtex
-@InProceedings{9981137,
-  author={Serdel, Quentin and Grand, Christophe and Marzat, Julien and Moras, Julien},
-  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
-  title={Online Localisation and Colored Mesh Reconstruction Architecture for 3D Visual Feedback in Robotic Exploration Missions}, 
-  year={2022},
-  volume={},
-  number={},
-  pages={8690-8697},
-  doi={10.1109/IROS47612.2022.9981137}}
- }
-```
-
 # Architecture Overview
 
 The robot estimates its localisation and builds a global map of its environment in the form of a LiDAR point cloud through the implementation of the [lidarslam_ros2](https://github.com/rsasaki0109/lidarslam_ros2) SLAM architecture on ROS2 from [#rsasaki0109](https://github.com/rsasaki0109), using an EKF fusion between wheeled odometry and IMU measurements as localisation prior.
@@ -76,7 +57,7 @@ sudo make install
 
 ```bash
 cd ~
-git clone https://gitlab.com/stage-qserdel/olcmr --recurse-submodules
+git clone https://github.com/onera/olcmr --recurse-submodules
 cd olcmr
 source /opt/ros/galactic/setup.bash
 colcon build --packages-skip scanmatcher graph_based_slam lidarslam
@@ -147,6 +128,25 @@ SLAM estimated trajectories and CPU/RAM usage monitoring data can be found in th
 All the launch parameters are located in the [template.yaml](src/olcmr_pkg/params/robot_configs/template.yaml) file.\
 You can copy this file and modify the parameters to run the architecture on a custom dataset or directly on board your robot, see [the parameters README file](src/olcmr_pkg/params) for parameters description.\
 You should also edit the [olcmr.launch.py](src/olcmr_pkg/launch/olcmr.launch.py) file to use your config file.
+
+# Publication
+
+If you are using this code, please cite: 
+
+- Q. Serdel, C. Grand, J. Marzat and J. Moras, [**Online Localisation and Colored Mesh Reconstruction Architecture for 3D Visual Feedback in Robotic Exploration Missions**](https://arxiv.org/abs/2207.10489). 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
+
+ ```bibtex
+@InProceedings{9981137,
+  author={Serdel, Quentin and Grand, Christophe and Marzat, Julien and Moras, Julien},
+  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Online Localisation and Colored Mesh Reconstruction Architecture for 3D Visual Feedback in Robotic Exploration Missions}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={8690-8697},
+  doi={10.1109/IROS47612.2022.9981137}}
+ }
+```
 
 You will need at least a LiDAR and a mono or RGB camera. For the architecture to function optimally, multiple RGB cameras with overlapping FOV, an IMU and a wheeled or legged odometry source should also be used. You can also use any other localisation source as the SLAM prior.\ 
 Camera calibration should be performed using [Kalibr](https://github.com/ethz-asl/kalibr). 
