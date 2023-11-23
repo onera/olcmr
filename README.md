@@ -47,7 +47,7 @@ cd ~
 git clone https://github.com/RainerKuemmerle/g2o.git
 cd g2o
 mkdir build
-cd build`
+cd build
 cmake ../
 make
 sudo make install
@@ -60,7 +60,7 @@ cd ~
 git clone https://github.com/onera/olcmr --recurse-submodules
 cd olcmr
 source /opt/ros/galactic/setup.bash
-colcon build --packages-skip scanmatcher graph_based_slam lidarslam
+colcon build --packages-skip scanmatcher graph_based_slam lidarslam --symlink-install
 source install/setup.bash
 colcon build --symlink-install
 ```
@@ -70,13 +70,15 @@ colcon build --symlink-install
 Follow [Voxblox installation instructions](https://voxblox.readthedocs.io/en/latest/pages/Installation.html)
 then move the custom voxblox launch files and rviz config from this package to voxblox_ros directory :
 ```bash
-cp voxblox_files/* ~/<your_noetic_ws>/src/voxblox/voxblox_ros
+cp -r voxblox_files/* ~/<your_noetic_ws>/src/voxblox/voxblox_ros
 ```
 
 # Running OLCMR With the Newer College dataset
 
 ***All the parameters of OLCMR components are located in the ![src/olcmr_pkg/params](src/olcmr_pkg/params) folder, they are described in this folder's README file.***
 The following instructions allow to run the complete OLCMR architecture on the Newer College dataset and on our experimental dataset.
+
+First make sure to set the "bag_file" param in the ![src/olcmr_pkg/params/robot_configs/newer_college_2021.yaml](src/olcmr_pkg/params/robot_configs/newer_college_2021.yaml) to your bag file path.
 
 ***Terminal A (ROS1 : TSDF and Rviz1 launch) :***\
 *Run the TSDF node and visualize the result with Rviz.*
