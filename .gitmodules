@@ -2,10 +2,10 @@
 	path = src/lidarslam_ros2
 	url = https://github.com/qserdel/lidarslam_ros2
 [submodule "src/perception_pcl"]
-       path = src/perception_pcl
-       url = https://github.com/ros-perception/perception_pcl.git
+	path = src/perception_pcl
+	url = https://github.com/ros-perception/perception_pcl.git
 [submodule "src/pcl_msgs"]
-       path = src/pcl_msgs
-       url = https://github.com/ros-perception/pcl_msgs.git
+	path = src/pcl_msgs
+	url = https://github.com/ros-perception/pcl_msgs.git
 
 	
