@@ -19,7 +19,7 @@ rviz_config_file: 'olcmr_config.rviz'
 ## Data bag
 use_bag: True
 use_ros1_bag: True
-bag_file: "/data/rosbag/newer_college_dataset/2021-07-01-10-37-38-quad-easy.bag"
+bag_file: "/data2/olcmr_rosbags/2021-07-01-10-37-38-quad-easy.bag"
 
 ## ROS2 Topics
 lidar_point_cloud_topic: '/os_cloud_node/points'
