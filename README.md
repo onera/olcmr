@@ -129,6 +129,9 @@ All the launch parameters are located in the [template.yaml](src/olcmr_pkg/param
 You can copy this file and modify the parameters to run the architecture on a custom dataset or directly on board your robot, see [the parameters README file](src/olcmr_pkg/params) for parameters description.\
 You should also edit the [olcmr.launch.py](src/olcmr_pkg/launch/olcmr.launch.py) file to use your config file.
 
+You will need at least a LiDAR and a mono or RGB camera. For the architecture to function optimally, multiple RGB cameras with overlapping FOV, an IMU and a wheeled or legged odometry source should also be used. You can also use any other localisation source as the SLAM prior.\
+Camera calibration should be performed using [Kalibr](https://github.com/ethz-asl/kalibr). 
+
 # Publication
 
 If you are using this code, please cite: 
@@ -147,6 +150,3 @@ If you are using this code, please cite:
   doi={10.1109/IROS47612.2022.9981137}}
  }
 ```
-
-You will need at least a LiDAR and a mono or RGB camera. For the architecture to function optimally, multiple RGB cameras with overlapping FOV, an IMU and a wheeled or legged odometry source should also be used. You can also use any other localisation source as the SLAM prior.\ 
-Camera calibration should be performed using [Kalibr](https://github.com/ethz-asl/kalibr). 
